@@ -16,7 +16,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="120"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" Text="When i click the button it changes picture" Foreground="DarkOrange"/>
+         <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+         <TextBlock Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" Text="When i click the button it changes picture" Foreground="DarkOrange"/>
             <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top">
             <Image Source="{Binding ImageToShow}" Width="200" Height="200" Stretch="None" Margin="120,0,20,0" />
             <Button Content="{Binding TextToShow}" Command="{Binding ClickCommand}" />

@@ -19,6 +19,18 @@
         <DefaultTile ShowName="allLogos" ShortName="MSDN Samples" />
         <SplashScreen Image="Assets\SplashScreen.png" />
       </VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="csv">
+            <SupportedFileTypes>
+              <FileType>.csv</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
+  <Capabilities>
+    <Capability Name="documentsLibrary" />
+  </Capabilities>
 </Package>

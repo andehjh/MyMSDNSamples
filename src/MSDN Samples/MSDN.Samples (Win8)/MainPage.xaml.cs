@@ -27,5 +27,10 @@
         {
             Frame.Navigate(typeof (ButtonChangePictureSample.View.ClickToChangePictureSample));
         }
+
+        private void ConvertingToCSVFile_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(ConvertingToCSVFile.View.ConvertingToCSVFilePage));
+        }
     }
 }

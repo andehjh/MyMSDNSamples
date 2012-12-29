@@ -1,4 +1,4 @@
-﻿namespace MSDN.Samples.ButtonChangePictureSample.View
+﻿namespace MSDN.Samples.ConvertingToCSVFile.View
 {
     using ViewModel;
     using Windows.UI.Xaml;
@@ -6,12 +6,12 @@
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ClickToChangePictureSample
+    public sealed partial class ConvertingToCSVFilePage
     {
-        public ClickToChangePictureSample()
+        public ConvertingToCSVFilePage()
         {
             InitializeComponent();
-            DataContext = new ClickToChangePictureViewModel();
+            DataContext = new ConvertingToCSVFileViewModel();
         }
 
         private void GoBack(object sender, RoutedEventArgs e)
