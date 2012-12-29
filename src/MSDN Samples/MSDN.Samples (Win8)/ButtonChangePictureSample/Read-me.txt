@@ -1,0 +1,3 @@
+﻿This sample is related with
+
+http://social.msdn.microsoft.com/Forums/en-US/winappswithcsharp/thread/67db3916-866e-41f7-96cb-6da0de825134

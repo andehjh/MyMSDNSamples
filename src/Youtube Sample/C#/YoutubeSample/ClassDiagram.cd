@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="YoutubeSample.YoutubeItem">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="_frameBorder" Hidden="true" />
+      <Field Name="_height" Hidden="true" />
+      <Field Name="_source" Hidden="true" />
+      <Field Name="_width" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQABkCAAAAAAAAAAECAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>YoutubeItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="YoutubeSample.YoutubeViewModel">
+    <Position X="2.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>YoutubeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

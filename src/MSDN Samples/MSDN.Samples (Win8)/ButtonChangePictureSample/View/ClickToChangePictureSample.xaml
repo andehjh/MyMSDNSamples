@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="MSDN.Samples.ButtonChangePictureSample.View.ClickToChangePictureSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" Text="When i click the button it changes picture" Foreground="DarkOrange"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top">
+            <Image Source="{Binding ImageToShow}" Width="200" Height="200" Stretch="None" Margin="120,0,20,0" />
+            <Button Content="{Binding TextToShow}" Command="{Binding ClickCommand}" />
+        </StackPanel>
+    </Grid>
+</Page>

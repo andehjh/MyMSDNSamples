@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="Windows8Sample.LocalizeAssets.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="120" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition  Height="0" />
+            <RowDefinition  Height="Auto" />
+            <RowDefinition  Height="10" />
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition  Height="40" />
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition  Height="40" />
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition  Height="40" />
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition  Height="40" />
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition  Height="40" />
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition  Height="*"/>
+        </Grid.RowDefinitions>
+            <TextBlock FontSize="42" x:Uid="Language" Margin="0,20,0,0" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+        <TextBlock x:Uid="MessageForAssetsFolder" Grid.Row="2" FontSize="20" Grid.Column="1" />
+        <TextBlock Text="x:Uid='SourceForImageLogo'"  FontSize="20"  Grid.Row="4"  Grid.Column="1"  />
+        <Image x:Uid="SourceForImageLogo" Grid.Row="6" Height="100" Width="100"  Grid.Column="1"/>
+
+        <TextBlock Text="Source='Assets/Logo.png'" Grid.Row="8"  FontSize="20"  Grid.Column="1"  />
+        <Image Source="Assets/Logo.png" Height="100" Width="100" Grid.Row="10"  Grid.Column="1"/>
+
+
+        <TextBlock x:Uid="MessageForResourcesFolder" Grid.Row="2" FontSize="20"  Grid.Column="3" />
+        <TextBlock Text="x:Uid='SourceForImageGeneralImage'"  FontSize="20"  Grid.Row="4"  Grid.Column="3" />
+        <Image x:Uid="SourceForImageGeneralImage" Grid.Row="6" Height="100"  Width="100"  Grid.Column="3"/>
+
+        <TextBlock Text="Source='Resources/GeneralImage.png'" Grid.Row="8"  FontSize="20"  Grid.Column="3" />
+        <Image Source="Resources/GeneralImage.png" Height="100" Width="100" Grid.Row="10" Grid.Column="3"/>
+
+        <TextBlock Text="Uri('ms-appx://Asstes/Logo.png')" Grid.Row="12"  FontSize="20"  Grid.Column="1" />
+        <Image x:Name="logoImage" Height="150" Width="100" Grid.Row="14" Grid.Column="1"/>
+
+        <TextBlock Text="Uri('ms-appx://Resources/GeneralImage.png')" Grid.Row="12"  FontSize="20"  Grid.Column="3" />
+        <Image x:Name="generalImage"  Height="100" Width="100" Grid.Row="14" Grid.Column="3"/>
+    </Grid>
+</Page>

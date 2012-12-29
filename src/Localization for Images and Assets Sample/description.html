@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Localization for Images and Assets</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Localization for Images and Assets</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            XAML, Windows 8, Windows 8 Store Apps
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Globalization
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">10/9/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Localization-for-and-Assets-4fac00c3">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><em>This sample shows who to localization images. </em></p>
+<p><em>Some applications need to add images for each language that application supports. In this sample you can see how to localize images from Assets folder (where is defined all logos and splash screen image) and other images that are in other folder, for
+ example Resources folder (but can be other name). </em></p>
+<p><em>The sample covers XAML code, C# code and appManifest file.<br>
+</em></p>
+<h1><span>Building the Sample</span></h1>
+<p><em>You only need Visual Studio 2012 and Windows 8, both the RTM version.</em><strong>&nbsp;</strong></p>
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p><em>In the <strong>first step</strong> we need to add the images in each folder like we see in the following picture:</em></p>
+<p><img id="67746" src="description/localizationimages.png" alt="" width="524" height="634"></p>
+<p>&nbsp;</p>
+<p><em>And we need to add the resource file (*.resw) for each language you want the application supports.</em></p>
+<p><em>You can see the topic: </em>Creating resource files in <a title="Creating and retrieving resources in Windows Store apps" href="http://msdn.microsoft.com/en-us/library/windows/apps/hh694557.aspx">
+Creating and retrieving resources in Windows Store apps</a></p>
+<p>&nbsp;</p>
+<p>The <strong>second step </strong>is to define in manifest the logos path:</p>
+<p><img id="67747" src="description/manifest.png" alt="" width="724" height="674"></p>
+<p>&nbsp;</p>
+<p>In the MainPage.xaml ans MainPage.xaml.cs you can see how to add the images:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// Case 1
+// Here is added the default image
+// but is showed the right image 
+// (in this sample, shows the english image or  portugueses image)
+&lt;Image Source=&quot;Assets/Logo.png&quot;/&gt;
+
+// Case 2
+
+// the SourceForImageLogo is to represent the 
+// SourceForImageLogo.Source value in *.resw file
+// in english case is: Assets/en-US/Logo.png
+//this case is not necessary because the last case is better
+&lt;Image x:Uid=&quot;SourceForImageLogo&quot; /&gt;
+
+// Case 3
+// in code behind you can add the image doing the //following
+var imageUriForlogo = new Uri(&quot;ms-appx:///Assets/Logo.png&quot;);
+logoImage.Source = new BitmapImage(imageUriForlogo);
+
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//&nbsp;Case&nbsp;1</span>&nbsp;
+<span class="cs__com">//&nbsp;Here&nbsp;is&nbsp;added&nbsp;the&nbsp;default&nbsp;image</span>&nbsp;
+<span class="cs__com">//&nbsp;but&nbsp;is&nbsp;showed&nbsp;the&nbsp;right&nbsp;image&nbsp;</span>&nbsp;
+<span class="cs__com">//&nbsp;(in&nbsp;this&nbsp;sample,&nbsp;shows&nbsp;the&nbsp;english&nbsp;image&nbsp;or&nbsp;&nbsp;portugueses&nbsp;image)</span>&nbsp;
+&lt;Image&nbsp;Source=<span class="cs__string">&quot;Assets/Logo.png&quot;</span>/&gt;&nbsp;
+&nbsp;
+<span class="cs__com">//&nbsp;Case&nbsp;2</span>&nbsp;
+&nbsp;
+<span class="cs__com">//&nbsp;the&nbsp;SourceForImageLogo&nbsp;is&nbsp;to&nbsp;represent&nbsp;the&nbsp;</span>&nbsp;
+<span class="cs__com">//&nbsp;SourceForImageLogo.Source&nbsp;value&nbsp;in&nbsp;*.resw&nbsp;file</span>&nbsp;
+<span class="cs__com">//&nbsp;in&nbsp;english&nbsp;case&nbsp;is:&nbsp;Assets/en-US/Logo.png</span>&nbsp;
+<span class="cs__com">//this&nbsp;case&nbsp;is&nbsp;not&nbsp;necessary&nbsp;because&nbsp;the&nbsp;last&nbsp;case&nbsp;is&nbsp;better</span>&nbsp;
+&lt;Image&nbsp;x:Uid=<span class="cs__string">&quot;SourceForImageLogo&quot;</span>&nbsp;/&gt;&nbsp;
+&nbsp;
+<span class="cs__com">//&nbsp;Case&nbsp;3</span>&nbsp;
+<span class="cs__com">//&nbsp;in&nbsp;code&nbsp;behind&nbsp;you&nbsp;can&nbsp;add&nbsp;the&nbsp;image&nbsp;doing&nbsp;the&nbsp;//following</span>&nbsp;
+var&nbsp;imageUriForlogo&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Uri(<span class="cs__string">&quot;ms-appx:///Assets/Logo.png&quot;</span>);&nbsp;
+logoImage.Source&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BitmapImage(imageUriForlogo);&nbsp;
+&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">For the image from de the Resource folder is similar. See in the solution.</div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode">Notes:</div>
+<div class="endscriptcode">Suppose you install the application when your computer is in English, it should show all images for the english version. If you switch for portuguese language it show the logos in english but the content is loading in Portugueses.
+ Another situation is when you unistall the application.</div>
+<p>&nbsp;</p>
+<p><span style="font-size:medium"><strong>Related Sample</strong></span></p>
+<p><a href="http://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa">Application resources and localization sample</a></p>
+<p>&nbsp;</p>
+<p><span style="font-size:medium"><strong>Related Topics</strong></span></p>
+<p><a title="Creating and retrieving resources in Windows Store apps" href="http://msdn.microsoft.com/en-us/library/windows/apps/hh694557.aspx">Creating and retrieving resources in Windows Store apps</a></p>
+<p><a title="Using the Manifest Designer (Windows Store apps)" href="http://msdn.microsoft.com/en-us/library/windows/apps/br230259.aspx">Using the Manifest Designer (Windows Store apps)</a></p>
+<p>&nbsp;</p>
+<h3><span style="font-size:medium">Build the sample</span></h3>
+<ol>
+<li>Start Visual Studio Express&nbsp;2012 for Windows&nbsp;8 and select <strong>File</strong> &gt;
+<strong>Open</strong> &gt; <strong>Project/Solution</strong>. </li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Visual Studio Express&nbsp;2012 for Windows&nbsp;8 Solution (.sln) file.
+</li><li>Press F7 or use <strong>Build</strong> &gt; <strong>Build Solution</strong> to build the sample.
+</li></ol>
+<h3><span style="font-size:medium">Run the sample</span></h3>
+<p>To debug the app and then run it, press F5 or use <strong>Debug</strong> &gt; <strong>
+Start Debugging</strong>. To run the app without debugging, press Ctrl&#43;F5 or use <strong>
+Debug</strong> &gt; <strong>Start Without Debugging</strong>.</p>
+<p>&nbsp;</p>
+<h1>More Information</h1>
+<div><em>Ask me on twitter @saramgsilva</em></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>
