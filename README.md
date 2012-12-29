@@ -1,4 +1,4 @@
-MyMSDNSamples
+My MSDN Samples
 =============
 
 This repository contains all my MSDN Foruns Samples
