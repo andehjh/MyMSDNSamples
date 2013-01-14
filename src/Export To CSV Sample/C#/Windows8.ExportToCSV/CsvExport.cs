@@ -8,6 +8,8 @@
 
     public class CsvExport<T> where T : class
     {
+        private const string ListSeparator = ";";
+
         public IList<T> Objects;
 
         public CsvExport(IList<T> objects)
@@ -33,7 +35,7 @@
                 //add header line.
                 foreach (var propertyInfo in propertyInfos.DeclaredProperties)
                 {
-                    sb.Append(propertyInfo.Name).Append(";");
+                    sb.Append(propertyInfo.Name).Append(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator);
                 }
                 sb.Remove(sb.Length - 1, 1).AppendLine();
             }
@@ -43,11 +45,12 @@
             {
                 foreach (var propertyInfo in propertyInfos.DeclaredProperties)
                 {
-                    sb.Append(MakeValueCsvFriendly(propertyInfo.GetValue(obj, null))).Append(";");
+                    sb.Append(MakeValueCsvFriendly(propertyInfo.GetValue(obj, null))).Append(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator);
                 }
+
                 sb.Remove(sb.Length - 1, 1).AppendLine();
             }
-
+            
             return sb.ToString();
         }
 

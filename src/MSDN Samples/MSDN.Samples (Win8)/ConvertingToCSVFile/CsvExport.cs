@@ -36,7 +36,7 @@ namespace MSDN.Samples.ConvertingToCSVFile
                 //add header line.
                 foreach (var propertyInfo in propertyInfos.DeclaredProperties)
                 {
-                    sb.Append(propertyInfo.Name).Append(";");
+                    sb.Append(propertyInfo.Name).Append(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator);
                 }
                 sb.Remove(sb.Length - 1, 1).AppendLine();
             }
@@ -46,7 +46,7 @@ namespace MSDN.Samples.ConvertingToCSVFile
             {
                 foreach (var propertyInfo in propertyInfos.DeclaredProperties)
                 {
-                    sb.Append(MakeValueCsvFriendly(propertyInfo.GetValue(obj, null))).Append(";");
+                    sb.Append(MakeValueCsvFriendly(propertyInfo.GetValue(obj, null))).Append(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator);
                 }
                 sb.Remove(sb.Length - 1, 1).AppendLine();
             }

@@ -12,8 +12,10 @@
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <ListBox Name="lbxDateTime" Grid.Column="0"/>
+        <ListBox Name="lbxDateTime" Grid.Column="0" />
+        
         <StackPanel Orientation="Vertical" Grid.Column="2">
+            <TextBlock Name="tblTitle" x:Uid="Title" FontSize="42"/>
             <Button Content="dateTime.ToString" Click="ShowDateTimeClick"/>
             <Button Content="dateTime.ToString with InvariantInfo" Click="ShowDateTimeWithInvariantInfoClick"/>
             <Button Content="CultureInfo.CurrentCulture.DateTimeFormat" Click="CultureInfoCurrentCultureDateTimeFormatClick"/>

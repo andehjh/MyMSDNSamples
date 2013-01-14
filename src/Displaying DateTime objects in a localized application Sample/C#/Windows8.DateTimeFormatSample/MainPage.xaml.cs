@@ -5,6 +5,7 @@
     using System.Globalization;
     using System.Linq;
 
+    using Windows.ApplicationModel.Resources;
     using Windows.Globalization.DateTimeFormatting;
 
     /// <summary>
@@ -74,6 +75,7 @@
         {
             var currentDateTime = DateTime.Now;
             var dateTimeFormatter = CultureInfo.CurrentCulture.DateTimeFormat;
+       
             lbxDateTime.Items.Add(string.Concat(dateTimeFormatter.FullDateTimePattern, " -> ", currentDateTime.ToString(dateTimeFormatter.FullDateTimePattern)));
 
             lbxDateTime.Items.Add(

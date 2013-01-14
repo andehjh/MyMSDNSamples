@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="MSDN.Samples.ChildControlWithSameParentControlSize.ChildControlWithSameParentControlSizePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MSDN.Samples.ChildControlWithSameParentControlSize"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <ListView Background="Gold" Grid.Row="0">
+            <ListView.Header>
+                <StackPanel Background="Red">
+                    <TextBlock Text="ListView with auto size header."/>
+                </StackPanel>
+            </ListView.Header>
+        </ListView>
+
+        <ListView Background="Gold" Name="listview" Grid.Row="2">
+            <ListView.Header>
+                <StackPanel Background="Red" Width="{Binding ActualWidth, ElementName=listview}">
+                    <TextBlock Text="ListView with header that has the same Listview's Width"/>
+                </StackPanel>
+            </ListView.Header>
+        </ListView>
+    </Grid>
+</Page>

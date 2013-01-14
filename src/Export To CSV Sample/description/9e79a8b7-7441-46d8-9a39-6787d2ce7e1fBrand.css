@@ -149,6 +149,9 @@ color:#707070 ;
         margin-left:0px;
     }
 
+    #UploadPage .projectTypeChoice > div {
+        height: 250px;
+    }
 
 #sideNav {
 }

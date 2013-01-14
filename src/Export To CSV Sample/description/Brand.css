@@ -982,6 +982,7 @@ table.srchbox
     width: 100%;
     vertical-align: top;
     padding: 1em 0.5em 0.5em 0.5em;
+    word-wrap: break-word;
 }
 #dashboardPage .projectManagement
 {
@@ -2892,6 +2893,7 @@ ul.notifications li ol, ul.notifications li ul
     font-size: 1.1em;
     margin-bottom: 11px;
     line-height:1.4;
+    word-wrap: break-word;
 }
 
 .IE7 #projectPage h2.projectSummary

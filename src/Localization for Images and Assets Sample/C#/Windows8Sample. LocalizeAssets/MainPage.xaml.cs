@@ -19,7 +19,7 @@ namespace Windows8Sample.LocalizeAssets
         public MainPage()
         {
             this.InitializeComponent();
-        }
+         }
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.

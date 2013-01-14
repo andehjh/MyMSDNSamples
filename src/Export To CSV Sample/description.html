@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:SearchBox,0:ImageSprite;/Areas/Epx/Themes/Metro/Content:0&amp;amp;hashKey=E778FABBB649835AFE4E73BCAC4F643A" xmlns="http://www.w3.org/1999/xhtml" />
-<link rel="stylesheet" type="text/css" href="description/d83137b3-107b-4697-863d-3bb09892aaefCombined.css,0:ImageSprite;/Areas/Epx/Themes/Metro/Content:0&amp;amp;hashKey=B88AD897C8197B762EA1BF0238A60A9F" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/00cfb4c0-e0ba-42a5-a403-c704bb15549bCombined.css,0:ImageSprite;/Areas/Epx/Themes/Metro/Content:0&amp;amp;hashKey=B88AD897C8197B762EA1BF0238A60A9F" xmlns="http://www.w3.org/1999/xhtml" />
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Export To CSV</title>
-        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/55301c81-301a-4c37-bf7f-d0261211d30bBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/9e79a8b7-7441-46d8-9a39-6787d2ce7e1fBrand.css" type="text/css" rel="Stylesheet" />
         <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
         <script src="description/offline.js" type="text/javascript"></script>
         <style type="text/css">
@@ -58,7 +58,7 @@
                 </div>
                 <div class="itemBar">
                     <label for="LastUpdated">Last Updated</label>
-                    <div id="LastUpdated">12/29/2012</div>
+                    <div id="LastUpdated">1/13/2013</div>
                 </div>
                 <div class="itemBarLong">
                     <label for="License">License</label>
@@ -210,7 +210,7 @@
                 //add header line.
                 foreach (var propertyInfo in propertyInfos.DeclaredProperties)
                 {
-                    sb.Append(propertyInfo.Name).Append(&quot;;&quot;);
+                    sb.Append(propertyInfo.Name).Append(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator);
                 }
                 sb.Remove(sb.Length - 1, 1).AppendLine();
             }
@@ -220,7 +220,7 @@
             {
                 foreach (var propertyInfo in propertyInfos.DeclaredProperties)
                 {
-                    sb.Append(MakeValueCsvFriendly(propertyInfo.GetValue(obj, null))).Append(&quot;;&quot;);
+                    sb.Append(MakeValueCsvFriendly(propertyInfo.GetValue(obj, null))).Append(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator);
                 }
                 sb.Remove(sb.Length - 1, 1).AppendLine();
             }
@@ -290,7 +290,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//add&nbsp;header&nbsp;line.</span>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;propertyInfo&nbsp;<span class="cs__keyword">in</span>&nbsp;propertyInfos.DeclaredProperties)&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.Append(propertyInfo.Name).Append(<span class="cs__string">&quot;;&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.Append(propertyInfo.Name).Append(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator);&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.Remove(sb.Length&nbsp;-&nbsp;<span class="cs__number">1</span>,&nbsp;<span class="cs__number">1</span>).AppendLine();&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
@@ -300,7 +300,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;propertyInfo&nbsp;<span class="cs__keyword">in</span>&nbsp;propertyInfos.DeclaredProperties)&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.Append(MakeValueCsvFriendly(propertyInfo.GetValue(obj,&nbsp;<span class="cs__keyword">null</span>))).Append(<span class="cs__string">&quot;;&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.Append(MakeValueCsvFriendly(propertyInfo.GetValue(obj,&nbsp;<span class="cs__keyword">null</span>))).Append(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator);&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.Remove(sb.Length&nbsp;-&nbsp;<span class="cs__number">1</span>,&nbsp;<span class="cs__number">1</span>).AppendLine();&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
@@ -345,6 +345,16 @@
 </div>
 </div>
 </div>
+<p>There is an important point in that class:</p>
+<p>The ListSeparator that you have defined in</p>
+<p><img id="74525" src="description/ListSeparator.png" alt="" width="546" height="339"></p>
+<p>can be found programatticaly using System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator</p>
+<p>But is dependes the list of languages preferences:</p>
+<p><img id="74526" src="description/language.png" alt="" width="443" height="301"></p>
+<p>&nbsp;</p>
+<p>If i choose English the ListSeparator is , and for my excel is ; because is that i have in my regional settings</p>
+<p>If i choose Portugues the LisSeparator is ; and for my excel is ; too and it works well.</p>
+<h1></h1>
 <h1><span>Source Code Files</span></h1>
 <ul>
 <li><em>BoardItem is my item that has Name, Value and Count properties<br>

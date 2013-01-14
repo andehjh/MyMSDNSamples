@@ -1,0 +1,25 @@
+﻿<common:LayoutAwarePage
+    x:Name="pageRoot"
+    x:Class="MSDN.Samples.UpdateAppSettings.View.UpdateAppSettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:MSDN.Samples.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:CharmFlyoutLibrary"
+    mc:Ignorable="d">
+
+   <Grid>
+        <controls:CharmFlyout
+           FlyoutWidth="640" Grid.RowSpan="2"
+           HorizontalAlignment="Right"
+           x:Name="cfSettings"
+           Heading="Settings"
+           HeadingBackgroundBrush="Black">
+            <Grid Background="Bisque">
+              <Button Content="Reset" VerticalAlignment="Top" Background="Red" Foreground="Black" Command="{Binding ResetValueCommand}"/>
+            </Grid>
+        </controls:CharmFlyout>
+        <TextBlock Name="MySettingsValue" Grid.Column="1" Margin="50,50,0,0" VerticalAlignment="Top" Text="{Binding Settings.Value}" Style="{StaticResource PageHeaderTextStyle}"/>
+        <Button Content="Add +1" Margin="50,250,0,0"  Command="{Binding IncrementValueCommand}" VerticalAlignment="Top" />
+    </Grid>
+</common:LayoutAwarePage>

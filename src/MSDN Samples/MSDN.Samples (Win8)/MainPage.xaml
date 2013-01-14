@@ -20,5 +20,7 @@
         <TextBlock Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" Text="MSND Samples by @saramgsilva" Foreground="DarkOrange"/>
         <Button Grid.Column="1" VerticalAlignment="Top" Name="ButtonChangePictureSample" Grid.Row="1" Content="When i click the button it changes picture" Click="ButtonChangePictureSample_OnClick"/>
         <Button Grid.Column="1" VerticalAlignment="Top" Name="ConvertingToCSVFile" Grid.Row="1" Margin="0,50,0,0" Content="Export data to excel file" Click="ConvertingToCSVFile_OnClick"/>
+        <Button Grid.Column="1" VerticalAlignment="Top" Name="ChildControlWithSameParentControlSize" Grid.Row="1" Margin="0,100,0,0" Content="Child Control with same Parent's Control Size." Click="ChildControlWithSameParentControlSize_OnClick"/>
+        <Button Grid.Column="1" VerticalAlignment="Top" Name="UpdateAppSettings" Grid.Row="1" Margin="0,150,0,0" Content="Update app settings" Click="UpdateAppSettingsOnClick"/>
     </Grid>
 </Page>
