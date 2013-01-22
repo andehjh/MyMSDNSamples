@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Netflix.ClientApp.TemplateSelector.NetFlixItemTemplateSelector">
+    <Position X="5.75" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>TemplateSelector\NetFlixItemTemplateSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Netflix.ClientApp.ViewModel.TitlesViewModel">
+    <Position X="4.75" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="_errorMessage" Hidden="true" />
+      <Field Name="_groups" Hidden="true" />
+      <Field Name="_isToShowProgress" Hidden="true" />
+      <Field Name="_serviceManager" Hidden="true" />
+      <Method Name="GetErrorMessage" Hidden="true" />
+      <Method Name="TitlesViewModel" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQAAAEACAAAAAAAAACAAAIAEgAAIAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>ViewModel\TitlesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Netflix.ClientApp.ViewModel.ViewModelLocator">
+    <Position X="0.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>ViewModel\ViewModelLocator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TitlesViewModel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Netflix.ClientApp.Services.FakeServiceManager">
+    <Position X="8" Y="2.25" Width="2.25" />
+    <Members>
+      <Field Name="_bitmapSoure" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAIAAAAAAAAEAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Services\FakeServiceManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Netflix.ClientApp.Helpers.NameDefinitions">
+    <Position X="3.25" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEgAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Helpers\NameDefinitions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Netflix.ClientApp.Helpers.ViewModelHelper">
+    <Position X="0.5" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Helpers\ViewModelHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Netflix.ClientApp.Services.IServiceManager">
+    <Position X="8" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Services\IServiceManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

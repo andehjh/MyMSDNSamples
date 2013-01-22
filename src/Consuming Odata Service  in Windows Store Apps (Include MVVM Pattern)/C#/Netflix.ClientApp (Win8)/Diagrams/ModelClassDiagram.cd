@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Netflix.ClientApp.Model.GroupView">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="_id" Hidden="true" />
+      <Field Name="_label" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAEAAACAAAIBBAAAAAgAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Model\GroupView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Netflix.ClientApp.Model.ItemView">
+    <Position X="3.75" Y="0.5" Width="2.5" />
+    <Members>
+      <Field Name="_group" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAEAAIAAAAAAAgAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ItemView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Netflix.ClientApp.Model.MyTitle">
+    <Position X="9.5" Y="3.25" Width="2" />
+    <Members>
+      <Field Name="_availableFrom" Hidden="true" />
+      <Field Name="_image" Hidden="true" />
+      <Field Name="_name" Hidden="true" />
+      <Field Name="_rating" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAIAAAAAQCgAAAQBEQAAAAAAAAAIA=</HashCode>
+      <FileName>Model\MyTitle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Netflix.ClientApp.Model.MyTitleItemView">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <Members>
+      <Field Name="_item" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAEABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\MyTitleItemView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Item" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Netflix.ClientApp.Model.TitleItemView">
+    <Position X="2" Y="3.75" Width="1.5" />
+    <Members>
+      <Field Name="_item" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Item" Type="Netflix.ClientApp.NetFlixCatalog.Title">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.102" Y="-0.328" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAEABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\TitleItemView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Item" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Netflix.ClientApp.NetFlixCatalog.Title">
+    <Position X="3.75" Y="6" Width="2.5" />
+    <Members>
+      <Field Name="_AudioFormats" Hidden="true" />
+      <Field Name="_AverageRating" Hidden="true" />
+      <Field Name="_Awards" Hidden="true" />
+      <Field Name="_BluRay" Hidden="true" />
+      <Field Name="_BluRayInitialized" Hidden="true" />
+      <Field Name="_BoxArt" Hidden="true" />
+      <Field Name="_BoxArtInitialized" Hidden="true" />
+      <Field Name="_Cast" Hidden="true" />
+      <Field Name="_DateModified" Hidden="true" />
+      <Field Name="_Directors" Hidden="true" />
+      <Field Name="_Disc" Hidden="true" />
+      <Field Name="_Discs" Hidden="true" />
+      <Field Name="_Dvd" Hidden="true" />
+      <Field Name="_DvdInitialized" Hidden="true" />
+      <Field Name="_Episodes" Hidden="true" />
+      <Field Name="_Genres" Hidden="true" />
+      <Field Name="_Id" Hidden="true" />
+      <Field Name="_Instant" Hidden="true" />
+      <Field Name="_InstantInitialized" Hidden="true" />
+      <Field Name="_Languages" Hidden="true" />
+      <Field Name="_Movie" Hidden="true" />
+      <Field Name="_Name" Hidden="true" />
+      <Field Name="_NetflixApiId" Hidden="true" />
+      <Field Name="_Rating" Hidden="true" />
+      <Field Name="_ReleaseYear" Hidden="true" />
+      <Field Name="_Runtime" Hidden="true" />
+      <Field Name="_ScreenFormats" Hidden="true" />
+      <Field Name="_Season" Hidden="true" />
+      <Field Name="_Seasons" Hidden="true" />
+      <Field Name="_Series" Hidden="true" />
+      <Field Name="_ShortName" Hidden="true" />
+      <Field Name="_ShortSynopsis" Hidden="true" />
+      <Field Name="_Synopsis" Hidden="true" />
+      <Field Name="_TinyUrl" Hidden="true" />
+      <Field Name="_Type" Hidden="true" />
+      <Field Name="_Url" Hidden="true" />
+      <Field Name="_WebsiteUrl" Hidden="true" />
+      <Method Name="CreateTitle" Hidden="true" />
+      <Method Name="OnAverageRatingChanged" Hidden="true" />
+      <Method Name="OnAverageRatingChanging" Hidden="true" />
+      <Method Name="OnBluRayChanged" Hidden="true" />
+      <Method Name="OnBluRayChanging" Hidden="true" />
+      <Method Name="OnBoxArtChanged" Hidden="true" />
+      <Method Name="OnBoxArtChanging" Hidden="true" />
+      <Method Name="OnDateModifiedChanged" Hidden="true" />
+      <Method Name="OnDateModifiedChanging" Hidden="true" />
+      <Method Name="OnDvdChanged" Hidden="true" />
+      <Method Name="OnDvdChanging" Hidden="true" />
+      <Method Name="OnIdChanged" Hidden="true" />
+      <Method Name="OnIdChanging" Hidden="true" />
+      <Method Name="OnInstantChanged" Hidden="true" />
+      <Method Name="OnInstantChanging" Hidden="true" />
+      <Method Name="OnNameChanged" Hidden="true" />
+      <Method Name="OnNameChanging" Hidden="true" />
+      <Method Name="OnNetflixApiIdChanged" Hidden="true" />
+      <Method Name="OnNetflixApiIdChanging" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Method Name="OnRatingChanged" Hidden="true" />
+      <Method Name="OnRatingChanging" Hidden="true" />
+      <Method Name="OnReleaseYearChanged" Hidden="true" />
+      <Method Name="OnReleaseYearChanging" Hidden="true" />
+      <Method Name="OnRuntimeChanged" Hidden="true" />
+      <Method Name="OnRuntimeChanging" Hidden="true" />
+      <Method Name="OnShortNameChanged" Hidden="true" />
+      <Method Name="OnShortNameChanging" Hidden="true" />
+      <Method Name="OnShortSynopsisChanged" Hidden="true" />
+      <Method Name="OnShortSynopsisChanging" Hidden="true" />
+      <Method Name="OnSynopsisChanged" Hidden="true" />
+      <Method Name="OnSynopsisChanging" Hidden="true" />
+      <Method Name="OnTinyUrlChanged" Hidden="true" />
+      <Method Name="OnTinyUrlChanging" Hidden="true" />
+      <Method Name="OnTypeChanged" Hidden="true" />
+      <Method Name="OnTypeChanging" Hidden="true" />
+      <Method Name="OnUrlChanged" Hidden="true" />
+      <Method Name="OnUrlChanging" Hidden="true" />
+      <Method Name="OnWebsiteUrlChanged" Hidden="true" />
+      <Method Name="OnWebsiteUrlChanging" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>RGoail4Si7UAHgBkbAPAIERepUA74MEAiaYAcgdeBQ0=</HashCode>
+      <FileName>Service References\NetFlixCatalog\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

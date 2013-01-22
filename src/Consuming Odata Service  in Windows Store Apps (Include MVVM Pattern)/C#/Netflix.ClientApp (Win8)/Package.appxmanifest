@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="21060148-b06a-4da9-9a1a-339d40c13b84" Publisher="CN=Sara Silva" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>Netflix Sample</DisplayName>
+    <PublisherDisplayName>Sara Silva</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Netflix.ClientApp__Win8_.App">
+      <VisualElements DisplayName="Netflix Sample" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="This sample has the goal to show how consume odata service." ForegroundText="light" BackgroundColor="#B9090B">
+        <DefaultTile ShowName="allLogos" ShortName="Netflix Sample" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
