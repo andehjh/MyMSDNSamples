@@ -52,5 +52,15 @@
         {
             Frame.Navigate(typeof(UpdateAppSettings.View.UpdateAppSettingsPage));
         }
+
+        /// <summary>
+        /// Handles the OnClick event of the BindingToTextboxUsingViewModel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void BindingToTextboxUsingViewModel_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(BindingToTextBoxUsingViewModel.View.BindingToTextBoxPage));
+        }
     }
 }

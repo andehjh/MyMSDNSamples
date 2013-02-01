@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MyTitleItemView.cs" company="saramgsilva">
+// <copyright file="TitleItemView.cs" company="saramgsilva">
 //   Copyright (c) 2012 saramgsilva. All rights reserved.
 // </copyright>
 // <summary>

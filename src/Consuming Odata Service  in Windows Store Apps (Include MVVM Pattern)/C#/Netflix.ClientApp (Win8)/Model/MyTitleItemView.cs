@@ -9,8 +9,6 @@
 
 namespace Netflix.ClientApp.Model
 {
-    using System;
-
     /// <summary>
     /// The fake item view.
     /// </summary>

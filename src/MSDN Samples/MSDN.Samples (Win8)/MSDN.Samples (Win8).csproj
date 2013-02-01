@@ -104,6 +104,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Content Include="ButtonChangePictureSample\Read-me.txt" />
+    <Compile Include="BindingToTextBoxUsingViewModel\ViewModel\BindingToTextBoxViewModel.cs" />
+    <Compile Include="BindingToTextBoxUsingViewModel\View\BindingToTextBoxPage.xaml.cs">
+      <DependentUpon>BindingToTextBoxPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ButtonChangePictureSample\ViewModel\ClickToChangePictureViewModel.cs" />
     <Compile Include="ButtonChangePictureSample\View\ClickToChangePictureSample.xaml.cs">
       <DependentUpon>ClickToChangePictureSample.xaml</DependentUpon>
@@ -185,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="BindingToTextBoxUsingViewModel\View\BindingToTextBoxPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ButtonChangePictureSample\View\ClickToChangePictureSample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

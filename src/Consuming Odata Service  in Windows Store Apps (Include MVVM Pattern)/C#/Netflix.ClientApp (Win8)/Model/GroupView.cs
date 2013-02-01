@@ -84,14 +84,6 @@ namespace Netflix.ClientApp.Model
         }
 
         /// <summary>
-        /// Gets or sets the item template key.
-        /// </summary>
-        /// <value>
-        /// The item template key.
-        /// </value>
-        public string ItemTemplateKey { get; set; }
-
-        /// <summary>
         /// Called when [property changed].
         /// </summary>
         /// <param name="propertyName">Name of the property.</param>

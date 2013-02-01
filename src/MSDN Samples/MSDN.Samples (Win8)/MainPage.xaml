@@ -22,5 +22,6 @@
         <Button Grid.Column="1" VerticalAlignment="Top" Name="ConvertingToCSVFile" Grid.Row="1" Margin="0,50,0,0" Content="Export data to excel file" Click="ConvertingToCSVFile_OnClick"/>
         <Button Grid.Column="1" VerticalAlignment="Top" Name="ChildControlWithSameParentControlSize" Grid.Row="1" Margin="0,100,0,0" Content="Child Control with same Parent's Control Size." Click="ChildControlWithSameParentControlSize_OnClick"/>
         <Button Grid.Column="1" VerticalAlignment="Top" Name="UpdateAppSettings" Grid.Row="1" Margin="0,150,0,0" Content="Update app settings" Click="UpdateAppSettingsOnClick"/>
+        <Button Grid.Column="1" VerticalAlignment="Top" Name="BindingToTextboxUsingViewModel" Grid.Row="1" Margin="0,200,0,0" Content="Binding to Textbox using View Model" Click="BindingToTextboxUsingViewModel_OnClick"/>
     </Grid>
 </Page>
