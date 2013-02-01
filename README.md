@@ -18,3 +18,5 @@ This repository contains all my MSDN Foruns Samples
 > [Displaying DateTime objects in a localized application ](http://code.msdn.microsoft.com/windowsapps/Diplaying-DateTime-objects-b7f02b77)
 
 > [Export To CSV](http://code.msdn.microsoft.com/windowsapps/Export-To-CSV-Sample-b31b50cf)
+
+> [Consuming Odata Service in Windows Store Apps - Include MVVM Pattern](http://code.msdn.microsoft.com/windowsapps/Consuming-Odata-Service-in-a97758e5)
