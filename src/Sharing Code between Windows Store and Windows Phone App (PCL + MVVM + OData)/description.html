@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:SearchBox,0:ImageSprite;/Areas/Epx/Themes/Metro/Content:0&amp;amp;hashKey=E778FABBB649835AFE4E73BCAC4F643A" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/97bee83a-bd3f-4aca-b6bf-c89883900ad8Combined.css,0:ImageSprite;/Areas/Epx/Themes/Metro/Content:0&amp;amp;hashKey=B88AD897C8197B762EA1BF0238A60A9F" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Sharing Code between Windows Store and Windows Phone App (PCL + MVVM + OData)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/56461029-7a1f-48e8-9980-1df0b0e0792eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Sharing Code between Windows Store and Windows Phone App (PCL + MVVM + OData)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, XAML, Windows Phone, Windows 8, Windows 8 Store Apps
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Asynchronous Programming, MVVM, How to, portable class library
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">2/5/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowsapps/Sharing-Code-between-411c999b">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p class="projectSummary">This sample has the goal to show how to share code between Windows Store and Windows Phone App.</p>
+<p class="projectSummary">&nbsp;</p>
+<p class="projectSummary">The initial code sample can be find here:</p>
+<p class="projectSummary" style="padding-left:30px"><a class="EyebrowLeafLink" href="http://code.msdn.microsoft.com/windowsapps/Creating-portable-code-in-ef25f126"><span>Creating portable code in Windows Store Apps (PCL &#43; MVVM &#43; OData Services)</span></a></p>
+<p class="projectSummary">Before you start, take a look in this presentation:</p>
+<p class="projectSummary" style="padding-left:30px"><a class="notranslate" title="Do not do more copy and paste between windows store and windows phone apps" href="http://www.slideshare.net/saramgsilva/do-not-do-more-copy-and-paste-between-windows-and-windows-phone-apps-store" >Do
+ not do more copy and paste between windows store and windows phone apps</a></p>
+<p class="projectSummary" style="padding-left:30px">&nbsp;</p>
+<h1><span>Building the Sample</span></h1>
+<p><em>You only need Visual Studio 2012 and Windows 8, both the RTM version.</em></p>
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p>&nbsp;</p>
+<p>Like you can see in <a class="EyebrowLeafLink" href="http://code.msdn.microsoft.com/windowsapps/Creating-portable-code-in-ef25f126">
+<span>Creating portable code in Windows Store Apps (PCL &#43; MVVM &#43; OData Services)</span></a>, you have a Portable Class Library that has model and view model defined! Which has the following targts:</p>
+<p>&nbsp;</p>
+<p><img id="75513" src="description/finallytarget.png" alt="" width="293" height="312"></p>
+<p>&nbsp;</p>
+<p>with this i conclude that code is portable and can be used in Windows Phone 7.5 or higher.</p>
+<p>We can create the Windows Phone 8 App and Windows Phone 7.5 (with update for 7.8) App and use this code, let's see how.</p>
+<p><strong>1. Start creating the Windows Phone ClientApp Project:</strong></p>
+<p><img id="75514" src="description/creatingWPProject.png" alt="" width="545" height="376"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>2.</strong> After this <strong>update the namespace</strong> and <strong>
+startup object</strong> to:</p>
+<p>&nbsp;</p>
+<p><img id="75515" src="description/wp8.png" alt="" width="610" height="344"></p>
+<p>&nbsp;</p>
+<p>You can create the same for Windows Phone 7.5!</p>
+<p><strong>3. Install the MVVM Light (PCL) for each Windows Phone ClientApp project:</strong></p>
+<p><img id="75525" src="description/MVVMLightPCL.png" alt="" width="612" height="395"></p>
+<p>&nbsp;</p>
+<p><strong>4. Install the Bcl.Async package</strong></p>
+<p>See more about it here <a href="http://nuget.org/packages/Microsoft.Bcl.Async">
+Async for .NET Framework 4, Silverlight 4 and 5, and Windows Phone 7.5 and 8</a></p>
+<p><img id="75526" src="description/bclAsync.png" alt="" width="617" height="399"></p>
+<p>&nbsp;</p>
+<p><strong>5. Add OData Services</strong></p>
+<p>OData Services is not portable,&nbsp; we need to add the Service metadata for each client app or create a separate project for it ( this is a sample, is not necessary and will add in client app).</p>
+<p>The metadata used is :<a href="http://odata.netflix.com/v2/Catalog/">http://odata.netflix.com/v2/Catalog/</a>. For understand that i did see
+<a href="http://code.msdn.microsoft.com/windowsapps/Consuming-Odata-Service-in-a97758e5">
+Consuming Odata Service in Windows Store Apps (Include MVVM Pattern)</a> is similar for Windows Phone.</p>
+<p><img id="74989" src="description/2.2AddServiceReference.png" alt="" width="460" height="293"></p>
+<p>&nbsp;</p>
+<p><strong>6. Create these folders</strong></p>
+<ul>
+<li>Extensions </li><li>Services&nbsp; </li><li>Styles </li><li>View </li><li>ViewModel </li></ul>
+<p>in each Windows Phone ClientApp project, like this:</p>
+<p>&nbsp;</p>
+<p><img id="75527" src="description/structure_for_projects.png" alt="" width="329" height="684"></p>
+<p>&nbsp;</p>
+<p>We created the same sctruture from Windows Store App!</p>
+<p>Why?</p>
+<p>Because make sense and is more simple to undestand all code and more important is because we will reuse code files from Windows Store Apps.</p>
+<p>&nbsp;</p>
+<p><strong>7. Use &quot;Add as Link&quot; for link all files that are inside the following folders:</strong></p>
+<ul>
+<li>Extensions </li><li>Services&nbsp; </li><li>ViewModel </li></ul>
+<p>&nbsp;</p>
+<p><img id="75530" src="description/add as link file.png" alt="" width="1063" height="466"></p>
+<p>the result will be</p>
+<h1><img id="75531" src="description/linkedFiles.png" alt="" width="339" height="684"></h1>
+<p>I linked three files that are <span id="result_box" class="short_text" lang="en">
+<span class="hps">physically contained inside the Windows Store Client App.</span></span></p>
+<p><span class="short_text" lang="en"><span class="hps"><strong>NOTE</strong>: Each linked file is unique, is not a copy from the original, each change will represent a change in all projects!<br>
+</span></span></p>
+<p>&nbsp;</p>
+<p><strong>8 . Add the ViewModelLocator to the App.xaml</strong></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden"> &lt;viewModel:ViewModelLocator x:Key=&quot;Locator&quot;/&gt;</pre>
+<div class="preview">
+<pre class="js">&nbsp;&lt;viewModel:ViewModelLocator&nbsp;x:Key=<span class="js__string">&quot;Locator&quot;</span>/&gt;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>If you compile the code, maybe you will find some old dependencies, because in &quot;last refactoring&quot; uses some using that weren&acute;t delete. And because i created Netflix.ClientApp and NetFlix.ClientApp namespace, the F or f&nbsp; made the name to different!
+ Is not important, but is more easy if we keep the same names for that can be shared or similar.</p>
+<p>These problems are <span id="result_box" class="short_text" lang="en"><span class="hps">common
+</span></span>and I could create a sample and documentation without them, but i think is important to share it, because always happens to all devs! :)</p>
+<p>&nbsp;</p>
+<p>After this we only need to create the view for show data, let's do it:</p>
+<p>&nbsp;</p>
+<p><strong>9. Create the View, adding content to the page:</strong></p>
+<p>Before define the page, prepare the information you will need.</p>
+<p><strong>9.1. &quot;Add as Link&quot; the BooleanNegationConverter and BooleanToVisibilityConverter from Windows Store Apps:</strong></p>
+<p><img id="75557" src="description/add_as_link.png" alt="" width="644" height="454"></p>
+<p>&nbsp;</p>
+<p><strong>9.2. Create the ResourceDictionary.xaml with datatemplates:</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&nbsp;</strong></p>
+<div class="scriptcode"><strong>
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">&lt;!-- DataTemplates for MyTitleItemView  --&gt;
+    &lt;DataTemplate x:Key=&quot;MyTopDVDMoviesItemTemplate&quot;&gt;
+        &lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Left&quot; Height=&quot;120&quot;&gt;
+            &lt;Image  CacheMode=&quot;BitmapCache&quot; Source=&quot;{Binding Item.Image}&quot;   Width=&quot;82&quot; Stretch=&quot;Uniform&quot;  Margin=&quot;10,10,5,10&quot;/&gt;
+            &lt;StackPanel  Margin=&quot;10,10,5,10&quot;&gt;
+                &lt;TextBlock Text=&quot;{Binding Item.Name}&quot; Foreground=&quot;{StaticResource ForegroundBrush}&quot; TextWrapping=&quot;Wrap&quot;  Margin=&quot;0,0,5,0&quot;/&gt;
+               &lt;StackPanel Orientation=&quot;Vertical&quot; Margin=&quot;0,0,10,0&quot; &gt;
+                    &lt;TextBlock TextWrapping=&quot;Wrap&quot;  Foreground=&quot;{StaticResource ForegroundBrush}&quot;  Margin=&quot;0,0,0,5&quot;&gt;Available: &lt;Run  Text=&quot;{Binding Item.AvailableFrom,  StringFormat='\{0:d MMMM yyyy\}'}&quot; /&gt;&lt;/TextBlock&gt;
+                &lt;/StackPanel&gt;
+            &lt;/StackPanel&gt;
+        &lt;/StackPanel&gt;
+    &lt;/DataTemplate&gt;
+
+    &lt;DataTemplate x:Key=&quot;MyNewDVDMoviesItemTemplate&quot;&gt;
+        &lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Left&quot;  Height=&quot;120&quot;&gt;
+            &lt;Image  CacheMode=&quot;BitmapCache&quot; Source=&quot;{Binding Item.Image}&quot;   Width=&quot;82&quot; Stretch=&quot;Uniform&quot;  Margin=&quot;10,10,5,10&quot;/&gt;
+            &lt;StackPanel  Margin=&quot;10,10,5,10&quot;&gt;
+                &lt;TextBlock Text=&quot;{Binding Item.Name}&quot; Foreground=&quot;{StaticResource ForegroundBrush}&quot; TextWrapping=&quot;Wrap&quot;  Margin=&quot;0,0,5,0&quot;/&gt;
+                &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,10,10,0&quot;&gt;
+                    &lt;TextBlock  Margin=&quot;0,0,5,5&quot; Text=&quot;Rating:&quot; Foreground=&quot;{StaticResource ForegroundBrush}&quot; /&gt;
+                    &lt;TextBlock  Margin=&quot;0,0,0,5&quot; Text=&quot;{Binding Item.Rating}&quot; Foreground=&quot;{StaticResource ForegroundBrush}&quot;/&gt;
+                &lt;/StackPanel&gt;
+                &lt;StackPanel Orientation=&quot;Vertical&quot; Margin=&quot;0,0,10,0&quot; &gt;
+                    &lt;TextBlock TextWrapping=&quot;Wrap&quot;  Foreground=&quot;{StaticResource ForegroundBrush}&quot;  Margin=&quot;0,0,0,5&quot;&gt;Available: &lt;Run  Text=&quot;{Binding Item.AvailableFrom,  StringFormat='\{0:d MMMM yyyy\}'}&quot; /&gt;&lt;/TextBlock&gt;
+                &lt;/StackPanel&gt;
+            &lt;/StackPanel&gt;
+        &lt;/StackPanel&gt;
+    &lt;/DataTemplate&gt;</pre>
+<div class="preview">
+<pre class="xaml"><span class="xaml__comment">&lt;!--&nbsp;DataTemplates&nbsp;for&nbsp;MyTitleItemView&nbsp;&nbsp;--&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;DataTemplate</span>&nbsp;x:<span class="xaml__attr_name">Key</span>=<span class="xaml__attr_value">&quot;MyTopDVDMoviesItemTemplate&quot;</span><span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;StackPanel</span>&nbsp;<span class="xaml__attr_name">Orientation</span>=<span class="xaml__attr_value">&quot;Horizontal&quot;</span>&nbsp;<span class="xaml__attr_name">HorizontalAlignment</span>=<span class="xaml__attr_value">&quot;Left&quot;</span>&nbsp;<span class="xaml__attr_name">Height</span>=<span class="xaml__attr_value">&quot;120&quot;</span><span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;Image</span>&nbsp;&nbsp;<span class="xaml__attr_name">CacheMode</span>=<span class="xaml__attr_value">&quot;BitmapCache&quot;</span>&nbsp;<span class="xaml__attr_name">Source</span>=<span class="xaml__attr_value">&quot;{Binding&nbsp;Item.Image}&quot;</span>&nbsp;&nbsp;&nbsp;<span class="xaml__attr_name">Width</span>=<span class="xaml__attr_value">&quot;82&quot;</span>&nbsp;<span class="xaml__attr_name">Stretch</span>=<span class="xaml__attr_value">&quot;Uniform&quot;</span>&nbsp;&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;10,10,5,10&quot;</span><span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;StackPanel</span>&nbsp;&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;10,10,5,10&quot;</span><span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;TextBlock</span>&nbsp;<span class="xaml__attr_name">Text</span>=<span class="xaml__attr_value">&quot;{Binding&nbsp;Item.Name}&quot;</span>&nbsp;<span class="xaml__attr_name">Foreground</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;ForegroundBrush}&quot;</span>&nbsp;<span class="xaml__attr_name">TextWrapping</span>=<span class="xaml__attr_value">&quot;Wrap&quot;</span>&nbsp;&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;0,0,5,0&quot;</span><span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;StackPanel</span>&nbsp;<span class="xaml__attr_name">Orientation</span>=<span class="xaml__attr_value">&quot;Vertical&quot;</span>&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;0,0,10,0&quot;</span>&nbsp;<span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;TextBlock</span>&nbsp;<span class="xaml__attr_name">TextWrapping</span>=<span class="xaml__attr_value">&quot;Wrap&quot;</span>&nbsp;&nbsp;<span class="xaml__attr_name">Foreground</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;ForegroundBrush}&quot;</span>&nbsp;&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;0,0,0,5&quot;</span><span class="xaml__tag_start">&gt;</span>Available:&nbsp;<span class="xaml__tag_start">&lt;Run</span>&nbsp;&nbsp;<span class="xaml__attr_name">Text</span>=<span class="xaml__attr_value">&quot;{Binding&nbsp;Item.AvailableFrom,&nbsp;&nbsp;StringFormat='\{0:d&nbsp;MMMM&nbsp;yyyy\}'}&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span><span class="xaml__tag_end">&lt;/TextBlock&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/StackPanel&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/StackPanel&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/StackPanel&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/DataTemplate&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;DataTemplate</span>&nbsp;x:<span class="xaml__attr_name">Key</span>=<span class="xaml__attr_value">&quot;MyNewDVDMoviesItemTemplate&quot;</span><span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;StackPanel</span>&nbsp;<span class="xaml__attr_name">Orientation</span>=<span class="xaml__attr_value">&quot;Horizontal&quot;</span>&nbsp;<span class="xaml__attr_name">HorizontalAlignment</span>=<span class="xaml__attr_value">&quot;Left&quot;</span>&nbsp;&nbsp;<span class="xaml__attr_name">Height</span>=<span class="xaml__attr_value">&quot;120&quot;</span><span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;Image</span>&nbsp;&nbsp;<span class="xaml__attr_name">CacheMode</span>=<span class="xaml__attr_value">&quot;BitmapCache&quot;</span>&nbsp;<span class="xaml__attr_name">Source</span>=<span class="xaml__attr_value">&quot;{Binding&nbsp;Item.Image}&quot;</span>&nbsp;&nbsp;&nbsp;<span class="xaml__attr_name">Width</span>=<span class="xaml__attr_value">&quot;82&quot;</span>&nbsp;<span class="xaml__attr_name">Stretch</span>=<span class="xaml__attr_value">&quot;Uniform&quot;</span>&nbsp;&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;10,10,5,10&quot;</span><span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;StackPanel</span>&nbsp;&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;10,10,5,10&quot;</span><span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;TextBlock</span>&nbsp;<span class="xaml__attr_name">Text</span>=<span class="xaml__attr_value">&quot;{Binding&nbsp;Item.Name}&quot;</span>&nbsp;<span class="xaml__attr_name">Foreground</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;ForegroundBrush}&quot;</span>&nbsp;<span class="xaml__attr_name">TextWrapping</span>=<span class="xaml__attr_value">&quot;Wrap&quot;</span>&nbsp;&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;0,0,5,0&quot;</span><span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;StackPanel</span>&nbsp;<span class="xaml__attr_name">Orientation</span>=<span class="xaml__attr_value">&quot;Horizontal&quot;</span>&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;0,10,10,0&quot;</span><span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;TextBlock</span>&nbsp;&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;0,0,5,5&quot;</span>&nbsp;<span class="xaml__attr_name">Text</span>=<span class="xaml__attr_value">&quot;Rating:&quot;</span>&nbsp;<span class="xaml__attr_name">Foreground</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;ForegroundBrush}&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;TextBlock</span>&nbsp;&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;0,0,0,5&quot;</span>&nbsp;<span class="xaml__attr_name">Text</span>=<span class="xaml__attr_value">&quot;{Binding&nbsp;Item.Rating}&quot;</span>&nbsp;<span class="xaml__attr_name">Foreground</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;ForegroundBrush}&quot;</span><span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/StackPanel&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;StackPanel</span>&nbsp;<span class="xaml__attr_name">Orientation</span>=<span class="xaml__attr_value">&quot;Vertical&quot;</span>&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;0,0,10,0&quot;</span>&nbsp;<span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;TextBlock</span>&nbsp;<span class="xaml__attr_name">TextWrapping</span>=<span class="xaml__attr_value">&quot;Wrap&quot;</span>&nbsp;&nbsp;<span class="xaml__attr_name">Foreground</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;ForegroundBrush}&quot;</span>&nbsp;&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;0,0,0,5&quot;</span><span class="xaml__tag_start">&gt;</span>Available:&nbsp;<span class="xaml__tag_start">&lt;Run</span>&nbsp;&nbsp;<span class="xaml__attr_name">Text</span>=<span class="xaml__attr_value">&quot;{Binding&nbsp;Item.AvailableFrom,&nbsp;&nbsp;StringFormat='\{0:d&nbsp;MMMM&nbsp;yyyy\}'}&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span><span class="xaml__tag_end">&lt;/TextBlock&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/StackPanel&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/StackPanel&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/StackPanel&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/DataTemplate&gt;</span></pre>
+</div>
+</div>
+</strong></div>
+<p><strong>&nbsp;</strong></p>
+<div class="endscriptcode"><strong>&nbsp;</strong></div>
+<p><strong>&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>9.3 Create inside the View folder the TitlePage.xaml:</strong></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">&lt;phone:PhoneApplicationPage
+    x:Class=&quot;Netflix.ClientApp.View.TitlesPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:phone=&quot;clr-namespace:<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Phone.Controls.aspx"  title="Auto generated link to Microsoft.Phone.Controls">Microsoft.Phone.Controls</a>;assembly=Microsoft.Phone&quot;
+    xmlns:shell=&quot;clr-namespace:<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Phone.Shell.aspx"  title="Auto generated link to Microsoft.Phone.Shell">Microsoft.Phone.Shell</a>;assembly=Microsoft.Phone&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    FontFamily=&quot;{StaticResource PhoneFontFamilyNormal}&quot;
+    FontSize=&quot;{StaticResource PhoneFontSizeNormal}&quot;
+    Foreground=&quot;{StaticResource PhoneForegroundBrush}&quot;
+    SupportedOrientations=&quot;Portrait&quot; Orientation=&quot;Portrait&quot;
+    DataContext=&quot;{Binding TitlesViewModel, Source={StaticResource Locator}}&quot;
+    mc:Ignorable=&quot;d&quot;
+    shell:SystemTray.IsVisible=&quot;True&quot;&gt;
+
+    &lt;!--LayoutRoot is the root grid where all page content is placed--&gt;
+    &lt;Grid x:Name=&quot;LayoutRoot&quot; Background=&quot;#B9090B&quot;&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+
+        &lt;!--TitlePanel contains the name of the application and page title--&gt;
+        &lt;StackPanel Grid.Row=&quot;0&quot; Margin=&quot;12,20,0,0&quot;&gt;
+            &lt;TextBlock Text=&quot;MY NetFlix Catalog&quot; Foreground=&quot;{StaticResource ForegroundBrush}&quot; Margin=&quot;9,-7,0,0&quot; Style=&quot;{StaticResource PhoneTextTitle2Style}&quot;/&gt;
+        &lt;/StackPanel&gt;
+
+        &lt;!--ContentPanel - place additional content here--&gt;
+        &lt;Grid x:Name=&quot;ContentPanel&quot; Grid.Row=&quot;1&quot; Margin=&quot;12,17,12,0&quot;&gt;
+            &lt;ProgressBar IsIndeterminate=&quot;True&quot; Height=&quot;20&quot; 
+                          Visibility=&quot;{Binding IsToShowProgress, Converter={StaticResource BooleanToVisibilityConverter}}&quot;
+                         Foreground=&quot;{StaticResource ForegroundBrush}&quot; IsEnabled=&quot;{Binding IsToShowProgress}&quot; Margin=&quot; 0,5,0,0&quot;/&gt;
+
+            &lt;phone:Pivot&gt;
+                &lt;!--Pivot item one--&gt;
+                &lt;phone:PivotItem Header=&quot;TOP&quot;&gt;
+                    &lt;ListBox Name=&quot;lbxTopTitles&quot; ItemsSource=&quot;{Binding Groups[0].Items}&quot; SelectionMode=&quot;Single&quot;  ItemTemplate=&quot;{StaticResource MyTopDVDMoviesItemTemplate}&quot; /&gt;
+                &lt;/phone:PivotItem&gt;
+
+                &lt;!--Pivot item two--&gt;
+                &lt;phone:PivotItem Header=&quot;New&quot;&gt;
+                    &lt;ListBox Name=&quot;lbxNewTitles&quot;  ItemsSource=&quot;{Binding Groups[1].Items}&quot; SelectionMode=&quot;Single&quot; ItemTemplate=&quot;{StaticResource MyNewDVDMoviesItemTemplate}&quot; /&gt;
+                &lt;/phone:PivotItem&gt;
+            &lt;/phone:Pivot&gt;
+        &lt;/Grid&gt;
+    &lt;/Grid&gt;
+
+&lt;/phone:PhoneApplicationPage&gt;</pre>
+<div class="preview">
+<pre class="js">&lt;phone:PhoneApplicationPage&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;x:Class=<span class="js__string">&quot;Netflix.ClientApp.View.TitlesPage&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns=<span class="js__string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:x=<span class="js__string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:phone=<span class="js__string">&quot;clr-namespace:<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Phone.Controls.aspx"  title="Auto generated link to Microsoft.Phone.Controls">Microsoft.Phone.Controls</a>;assembly=Microsoft.Phone&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:shell=<span class="js__string">&quot;clr-namespace:<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Phone.Shell.aspx"  title="Auto generated link to Microsoft.Phone.Shell">Microsoft.Phone.Shell</a>;assembly=Microsoft.Phone&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:d=<span class="js__string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:mc=<span class="js__string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;FontFamily=<span class="js__string">&quot;{StaticResource&nbsp;PhoneFontFamilyNormal}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;FontSize=<span class="js__string">&quot;{StaticResource&nbsp;PhoneFontSizeNormal}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Foreground=<span class="js__string">&quot;{StaticResource&nbsp;PhoneForegroundBrush}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;SupportedOrientations=<span class="js__string">&quot;Portrait&quot;</span>&nbsp;Orientation=<span class="js__string">&quot;Portrait&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;DataContext=<span class="js__string">&quot;{Binding&nbsp;TitlesViewModel,&nbsp;Source={StaticResource&nbsp;Locator}}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;mc:Ignorable=<span class="js__string">&quot;d&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;shell:SystemTray.IsVisible=<span class="js__string">&quot;True&quot;</span>&gt;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--LayoutRoot&nbsp;is&nbsp;the&nbsp;root&nbsp;grid&nbsp;where&nbsp;all&nbsp;page&nbsp;content&nbsp;is&nbsp;placed--&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;Grid&nbsp;x:Name=<span class="js__string">&quot;LayoutRoot&quot;</span>&nbsp;Background=<span class="js__string">&quot;#B9090B&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Grid.RowDefinitions&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;RowDefinition&nbsp;Height=<span class="js__string">&quot;Auto&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;RowDefinition&nbsp;Height=<span class="js__string">&quot;*&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Grid.RowDefinitions&gt;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--TitlePanel&nbsp;contains&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;application&nbsp;and&nbsp;page&nbsp;title--&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;StackPanel&nbsp;Grid.Row=<span class="js__string">&quot;0&quot;</span>&nbsp;Margin=<span class="js__string">&quot;12,20,0,0&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBlock&nbsp;Text=<span class="js__string">&quot;MY&nbsp;NetFlix&nbsp;Catalog&quot;</span>&nbsp;Foreground=<span class="js__string">&quot;{StaticResource&nbsp;ForegroundBrush}&quot;</span>&nbsp;Margin=<span class="js__string">&quot;9,-7,0,0&quot;</span>&nbsp;Style=<span class="js__string">&quot;{StaticResource&nbsp;PhoneTextTitle2Style}&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/StackPanel&gt;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--ContentPanel&nbsp;-&nbsp;place&nbsp;additional&nbsp;content&nbsp;here--&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Grid&nbsp;x:Name=<span class="js__string">&quot;ContentPanel&quot;</span>&nbsp;Grid.Row=<span class="js__string">&quot;1&quot;</span>&nbsp;Margin=<span class="js__string">&quot;12,17,12,0&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ProgressBar&nbsp;IsIndeterminate=<span class="js__string">&quot;True&quot;</span>&nbsp;Height=<span class="js__string">&quot;20&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Visibility=<span class="js__string">&quot;{Binding&nbsp;IsToShowProgress,&nbsp;Converter={StaticResource&nbsp;BooleanToVisibilityConverter}}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Foreground=<span class="js__string">&quot;{StaticResource&nbsp;ForegroundBrush}&quot;</span>&nbsp;IsEnabled=<span class="js__string">&quot;{Binding&nbsp;IsToShowProgress}&quot;</span>&nbsp;Margin=<span class="js__string">&quot;&nbsp;0,5,0,0&quot;</span>/&gt;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;phone:Pivot&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--Pivot&nbsp;item&nbsp;one--&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;phone:PivotItem&nbsp;Header=<span class="js__string">&quot;TOP&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ListBox&nbsp;Name=<span class="js__string">&quot;lbxTopTitles&quot;</span>&nbsp;ItemsSource=<span class="js__string">&quot;{Binding&nbsp;Groups[0].Items}&quot;</span>&nbsp;SelectionMode=<span class="js__string">&quot;Single&quot;</span>&nbsp;&nbsp;ItemTemplate=<span class="js__string">&quot;{StaticResource&nbsp;MyTopDVDMoviesItemTemplate}&quot;</span>&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/phone:PivotItem&gt;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--Pivot&nbsp;item&nbsp;two--&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;phone:PivotItem&nbsp;Header=<span class="js__string">&quot;New&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ListBox&nbsp;Name=<span class="js__string">&quot;lbxNewTitles&quot;</span>&nbsp;&nbsp;ItemsSource=<span class="js__string">&quot;{Binding&nbsp;Groups[1].Items}&quot;</span>&nbsp;SelectionMode=<span class="js__string">&quot;Single&quot;</span>&nbsp;ItemTemplate=<span class="js__string">&quot;{StaticResource&nbsp;MyNewDVDMoviesItemTemplate}&quot;</span>&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/phone:PivotItem&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/phone:Pivot&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Grid&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Grid&gt;&nbsp;
+&nbsp;
+&lt;/phone:PhoneApplicationPage&gt;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>and</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden"> public partial class TitlesPage
+    {
+        /// &lt;summary&gt;
+        /// Initializes a new instance of the &lt;see cref=&quot;TitlesPage&quot; /&gt; class.
+        /// &lt;/summary&gt;
+        public TitlesPage()
+        {
+            InitializeComponent();
+        }
+
+        /// &lt;summary&gt;
+        /// Called when a page becomes the active page in a frame.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;e&quot;&gt;An object that contains the event data.&lt;/param&gt;
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var titlesViewModel = DataContext as TitlesViewModel;
+            if (titlesViewModel != null
+                &amp;&amp; (e.NavigationMode == NavigationMode.New || e.NavigationMode == NavigationMode.Refresh))
+            {
+                await titlesViewModel.LoadDataAsync();
+            }
+        }
+     }</pre>
+<div class="preview">
+<pre class="js">&nbsp;public&nbsp;partial&nbsp;class&nbsp;TitlesPage&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">///&nbsp;Initializes&nbsp;a&nbsp;new&nbsp;instance&nbsp;of&nbsp;the&nbsp;&lt;see&nbsp;cref=&quot;TitlesPage&quot;&nbsp;/&gt;&nbsp;class.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;TitlesPage()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InitializeComponent();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">///&nbsp;Called&nbsp;when&nbsp;a&nbsp;page&nbsp;becomes&nbsp;the&nbsp;active&nbsp;page&nbsp;in&nbsp;a&nbsp;frame.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">///&nbsp;&lt;param&nbsp;name=&quot;e&quot;&gt;An&nbsp;object&nbsp;that&nbsp;contains&nbsp;the&nbsp;event&nbsp;data.&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;override&nbsp;async&nbsp;<span class="js__operator">void</span>&nbsp;OnNavigatedTo(NavigationEventArgs&nbsp;e)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;titlesViewModel&nbsp;=&nbsp;DataContext&nbsp;as&nbsp;TitlesViewModel;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(titlesViewModel&nbsp;!=&nbsp;null&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;&nbsp;(e.NavigationMode&nbsp;==&nbsp;NavigationMode.New&nbsp;||&nbsp;e.NavigationMode&nbsp;==&nbsp;NavigationMode.Refresh))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;titlesViewModel.LoadDataAsync();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>There is one point that is diferente from WP8 and WP7.5, is the namespace for pivot control.</p>
+<p>&nbsp;</p>
+<p><strong>XAML cannot be shared, better should&acute;t!</strong></p>
+<p>&nbsp;</p>
+<p><strong>9.4. Define the TitlesPage.xaml as a start page:</strong></p>
+<p>&nbsp;</p>
+<p><img id="75558" src="description/05-02-2013 01-16-49.png" alt="" width="518" height="219"></p>
+<p>&nbsp;</p>
+<p><strong>10. The output</strong></p>
+<p>&nbsp;</p>
+<p><img id="75559" src="description/screenshot1.png" alt="" width="173" height="289">&nbsp;
+<img id="75560" src="description/screenshot2.png" alt="" width="174" height="290"></p>
+<p>&nbsp;</p>
+<p><strong>Notes: </strong></p>
+<p>1. In inital sample, that was initial source, i did not change the namespace from Netflix.ClientApp to Netflix.PortableClassLibrar, but was because i forgot. You should be aware too. And i did not changed because i am creating a git repository for how wants
+ to see the commit and changes i did.</p>
+<p>2. If you want to see the commit and changed i did when i create this sample, you need to get from: (Size limitation don&acute;t allow to add this package here)</p>
+<p><a href="http://code.msdn.microsoft.com/windowsapps/Sharing-Code-between-411c999b/https://github.com/saramgsilva/MyMSDNSamples">http://code.msdn.microsoft.com/windowsapps/Sharing-Code-between-411c999b/https://github.com/saramgsilva/MyMSDNSamples</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img id="75562" src="description/gitextenstion.png" alt="" width="686" height="366"></p>
+<h1><span>Source Code Files</span></h1>
+<p><span>The solution has the following structure:</span></p>
+<p><img id="75561" src="description/wpprojects.png" alt="" width="321" height="617"></p>
+<p>&nbsp;</p>
+<p>Details:</p>
+<ul>
+<li><strong>IServiceManager.cs</strong> has the IServiceManager interface and define the interface for the ServiceManager.
+</li><li><strong>ServiceManager.cs</strong> has the ServiceManager class and it encapsulate the NetFlixService and exposes only the methods that is need in ViewModel.
+</li><li><strong>FakeServiceManager.cs</strong> is the implementation of the IServiceManager, but is a fake data.
+</li></ul>
+<ul>
+<li><strong>TitlesViewModel.cs</strong> has TitlesViewModel class and it is used for binding with the DataContext from TitlesPage.
+</li><li><strong>ViewModelLocator.cs</strong> has the ViewModelLocator class that help to binding the view model with the view.
+</li><li><strong>ViewModelHelper.cs</strong> has the ViewModelHelper class the helps to create grouped data.
+</li></ul>
+<ul>
+<li><strong>TitlesPage.xaml </strong>and <strong>TitlesPage.xaml.cs</strong> that is the main page.
+</li><li><strong>Templates.xaml </strong>is a resource dictionary that has the DataTemplate for the view.
+</li><li><strong>NetFlixItemTemplateSelector.cs</strong> has the NetFlixItemTemplateSelector that is used for get the ItemTemplate for each item in gridView.
+</li></ul>
+<h1>Others References</h1>
+<ul>
+<li><a title="Permalink to Portable Class Library – Articles and Sample References" rel="bookmark" href="http://www.saramgsilva.com/index.php/2013/portable-class-library-articles-and-sample-references/">Portable Class Library &ndash; Articles and Sample References</a>
+</li><li><a rel="nofollow" href="http://msdn.microsoft.com/en-us/library/gg597391%28v=vs.100%29" >Portable Class Libraries &ndash; Net Framework 4.0</a>
+</li><li><a rel="nofollow" href="http://msdn.microsoft.com/en-us/library/gg597391%28v=vs.110%29" >Portable Class Libraries &ndash; Net Framework 4.5</a>
+</li><li><a href="http://www.saramgsilva.com/index.php/2012/odata-services-in-portable-class-library/">Odata services in Portable class library</a>
+</li></ul>
+<h1>Run the sample</h1>
+<p>To debug the app and then run it, press F5 or use <strong>Debug</strong> &gt; <strong>
+Start Debugging</strong>. To run the app without&nbsp;&nbsp; debugging, press Ctrl&#43;F5 or use
+<strong>Debug</strong> &gt; <strong>Start Without Debugging</strong>.</p>
+<p>&nbsp;</p>
+<h1>More Information</h1>
+<p><em>Ask me on twitter @saramgsilva</em></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>
