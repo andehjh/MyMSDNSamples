@@ -20,3 +20,7 @@ This repository contains all my MSDN Foruns Samples
 > [Export To CSV](http://code.msdn.microsoft.com/windowsapps/Export-To-CSV-Sample-b31b50cf)
 
 > [Consuming Odata Service in Windows Store Apps - Include MVVM Pattern](http://code.msdn.microsoft.com/windowsapps/Consuming-Odata-Service-in-a97758e5)
+
+> [Creating portable code in Windows Store Apps (PCL + MVVM + OData Services](http://code.msdn.microsoft.com/windowsapps/Creating-portable-code-in-ef25f126)
+
+> [Sharing Code between Windows Store and Windows Phone App (PCL + MVVM + OData)](http://code.msdn.microsoft.com/windowsapps/Sharing-Code-between-411c999b)
