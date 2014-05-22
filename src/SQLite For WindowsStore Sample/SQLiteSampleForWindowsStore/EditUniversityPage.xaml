@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="SQLiteSampleForWindowsStore.EditUniversityPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    DataContext="{Binding EditUniversityViewModel, Source={StaticResource Locator}}"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton"
+                    IsEnabled="{Binding CanGoBack}" 
+                    Command="{Binding GoBackCommand}"
+                    Style="{StaticResource BackButtonStyle}"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Edit University" Style="{StaticResource PageHeaderTextStyle}"/>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="110,42,0,0" Grid.Row="1" TextWrapping="Wrap" 
+                   Text="Name:" VerticalAlignment="Top" Style="{StaticResource PageSubheaderTextStyle}"/>
+        <TextBox HorizontalAlignment="Left" Margin="195,39,0,0" Grid.Row="1"
+                 TextWrapping="Wrap" Text="{Binding University.Name, Mode=TwoWay}" VerticalAlignment="Top" FontSize="22" Height="50" Width="398"/>
+        <Button Content="Save" Command="{Binding SaveCommand}" Margin="445,127,0,463" Grid.Row="1"/>
+        <Button Content="Cancel" Command="{Binding CancelCommand}" Margin="515,127,0,463" Grid.Row="1"/>
+    </Grid>
+</Page>

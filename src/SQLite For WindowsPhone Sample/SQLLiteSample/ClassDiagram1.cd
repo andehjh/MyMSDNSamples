@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SQLLiteSample.Model.University">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <Members>
+      <Field Name="_id" Hidden="true" />
+      <Field Name="_name" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAICIAAAAAAAAAAAAABAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\University.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Students" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SQLLiteSample.Model.Student">
+    <Position X="3.75" Y="0.75" Width="1.5" />
+    <Members>
+      <Field Name="_age" Hidden="true" />
+      <Field Name="_firstName" Hidden="true" />
+      <Field Name="_id" Hidden="true" />
+      <Field Name="_lastName" Hidden="true" />
+      <Field Name="_universityId" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAECAEAACAAAAAAAAEFAAAAAAAAAAAgAAEAAAAAAAAg=</HashCode>
+      <FileName>Model\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SQLLiteSample.Service.DataService">
+    <Position X="7.75" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAACAAAAIEACAACAAAAQAAAAAAAAAAAQAAIAAAAAA=</HashCode>
+      <FileName>Service\DataService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="SQLLiteSample.Service.IDataService">
+    <Position X="6" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAACAAAAIEACAACAAAAAAAAAAAAAAAAQAAIAAAAAA=</HashCode>
+      <FileName>Service\IDataService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
