@@ -3,10 +3,6 @@ My MSDN Samples
 
 This repository contains all my MSDN Foruns Samples
 
-[Follow my blog: typeof(saramgsilva)](http://www.saramgsilva.com/) 
-
-[Follow me in twitter: @saramgsilva](https://twitter.com/saramgsilva)
-
 
 > Read more about my samples
 
@@ -45,3 +41,12 @@ This repository contains all my MSDN Foruns Samples
 
 
 See all samples [here](http://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=saramgsilva&sortBy=Ratings)
+
+
+
+Follow me
+=====
+
+> [My blog: typeof(saramgsilva)](http://www.saramgsilva.com/) 
+
+> [My twitter account: @saramgsilva](https://twitter.com/saramgsilva)
