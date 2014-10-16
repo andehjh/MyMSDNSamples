@@ -38,6 +38,7 @@ This repository contains all my MSDN Foruns Samples
 
 > [Authentication using Facebook, Google and Microsoft account in WP8.0 App (MVVM)](http://code.msdn.microsoft.com/Authentication-using-cd382133)
 
+>[How to binding a ResourceDictionary to a Lisbox in apps based in XAML](https://code.msdn.microsoft.com/How-to-binding-a-030f635a)
 
 
 See all samples [here](http://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=saramgsilva&sortBy=Ratings)
