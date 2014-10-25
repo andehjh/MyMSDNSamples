@@ -40,9 +40,23 @@ This repository contains all my MSDN Foruns Samples
 
 >[How to binding a ResourceDictionary to a Lisbox in apps based in XAML](https://code.msdn.microsoft.com/How-to-binding-a-030f635a)
 
+>[File exporter for IEnumerable of T](https://code.msdn.microsoft.com/File-exporter-for-fbc5d08e)
 
 See all samples [here](http://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=saramgsilva&sortBy=Ratings)
 
+
+Visual Studio extension used
+===
+
+<MTMarkdownOptions output='html4'>
+<img  src="http://s28.postimg.org/oeva5xorh/resharper_logo.png">
+</MTMarkdownOptions>  
+<MTMarkdownOptions output='html4'>
+<img  src="http://s15.postimg.org/b9d7jg6jb/1_ghostdoc100x100.gif">
+</MTMarkdownOptions>  
+<MTMarkdownOptions output='html4'>
+<img  src="http://s14.postimg.org/zbphu8mdp/Style_Cop_Logo.png">
+</MTMarkdownOptions>  
 
 
 Follow me
